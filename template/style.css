@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+.head{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(250, 35, 78);
+    padding: 1rem 0 1rem 0;
+    color: white;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.card__container{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.card__container-card{
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(249, 217, 229);
+    padding: 2rem 2rem 2rem 2rem;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.2);
+    margin-top: 1.2rem;
+}
+
+.card__container-card:hover{
+    box-shadow: unset;
+}
+
+.card__container-card-head{
+    margin-bottom: 1rem;
+    width: fit-content;
+    height: fit-content;
+    /* color: white; */
+}
+
+.name{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: rgb(255, 0, 51);
+}
+
+.role{
+    color: white;
+    font-weight: bold;
+}
+
+.id,.email{
+    margin-bottom: 0.5rem;
+    font-family: 'EB Garamond', serif;
+}
+
+.id,.email,.other *{
+    font-family: 'EB Garamond', serif;
+}
+
+.card__container-card-main{
+    /* color: white; */
+    width: fit-content;
+    height: fit-content;
+}
+
+a{
+    text-decoration: none;
+}

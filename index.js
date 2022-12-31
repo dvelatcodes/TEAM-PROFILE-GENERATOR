@@ -6,10 +6,11 @@ const fs = require("fs");
 const path = require("node:path");
 const outputFolder = path.resolve(__dirname, "output");
 const outputHTML = path.join(outputFolder, "index.html");
+const generateTeam = require("./dist/Webpage");
 const team = [];
 
-const validateInput = (data) => {
-  if (data) return true;
+const validateInput = (nameInput) => {
+  if (nameInput) return true;
   else {
     console.log("Input field cannot be left empty");
     return false;
@@ -23,25 +24,25 @@ const promptManager = () => {
         type: "input",
         name: "name",
         message: "What is your name?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "id",
         message: "What is your employee id?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "email",
         message: "What is your email address?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "officeNumber",
         message: "What is your office number?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
     ])
     .then((answer) => {
@@ -56,7 +57,7 @@ const promptManager = () => {
     });
 };
 
-const promptMenu = (data) => {
+const promptMenu = () => {
   inquirer
     .prompt([
       {
@@ -68,7 +69,7 @@ const promptMenu = (data) => {
           "add an intern",
           "finish building my team",
         ],
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
     ])
     .then((answer) => {
@@ -85,25 +86,25 @@ const promptEngineer = () => {
         type: "input",
         name: "name",
         message: "what is your name?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "id",
         message: "what is your id?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "email",
         message: "what is your email address?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "github",
         message: "what is your github account?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
     ])
     .then((answer) => {
@@ -125,25 +126,25 @@ const promptIntern = () => {
         type: "input",
         name: "name",
         message: "name of intern?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "id",
         message: "what is the intern's id?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "email",
         message: "what is the intern's email address?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
       {
         type: "input",
         name: "school",
         message: "what is the name of the intern's school?",
-        validate: validateInput(data),
+        // validate: validateInput(nameInput),
       },
     ])
     .then((answer) => {
@@ -158,7 +159,7 @@ const promptIntern = () => {
     });
 };
 
-const buildTeam = () => {
+const promptBuildTeam = () => {
   if (!fs.existsSync(outputFolder)) {
     fs.mkdirSync(outputFolder);
   }
